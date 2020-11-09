@@ -1,5 +1,9 @@
 from random import randint
+<<<<<<< HEAD
 from math import ceil
+=======
+from math import ceil, floor
+>>>>>>> 30ae5fbbef4f84be40308d7ebfb3bd57a6fc8ecd
 
 class Board:
     def __init__(self, numbers, grid, potential_numbers):
@@ -19,12 +23,20 @@ class Board:
                 print(self.potential_numbers[i][j], end=' ')
             print()
     
+<<<<<<< HEAD
     def scrape_potential_numbers(self):
+=======
+    def scrape_potential(self):
+>>>>>>> 30ae5fbbef4f84be40308d7ebfb3bd57a6fc8ecd
         appended = False
 
         for row in range(9):
             for column in range(9):
+<<<<<<< HEAD
                 quartile = (row // 3, column // 3)
+=======
+                quartile = (floor(row / 3), floor(column / 3))
+>>>>>>> 30ae5fbbef4f84be40308d7ebfb3bd57a6fc8ecd
 
                 if self.grid[row][column] == 0:
                     for num in self.numbers: 
@@ -100,12 +112,16 @@ class Board:
         return appended
     
     def scrape_valid(self):
+<<<<<<< HEAD
 
+=======
+>>>>>>> 30ae5fbbef4f84be40308d7ebfb3bd57a6fc8ecd
         for row in range(9):
             for column in range(9):
                 if len(self.potential_numbers[row][column]) == 1:
                     self.grid[row][column] = self.potential_numbers[row][column][0]
 
+<<<<<<< HEAD
     def deep_scrape_potential(self):
         for row in range(9):
             for column in range(9):
@@ -212,3 +228,9 @@ class Board:
                     return False
                 else:
                     return True
+=======
+    def flush(self):
+        for row in range(9):
+            for column in range(9):
+                self.potential_numbers[row][column].clear()
+>>>>>>> 30ae5fbbef4f84be40308d7ebfb3bd57a6fc8ecd
